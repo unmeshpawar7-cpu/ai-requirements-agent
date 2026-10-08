@@ -1,0 +1,50 @@
+LEDGERLINE INVOICE APPROVAL PORTAL
+Business Requirements Document - fictional sample for the ai-requirements-agent demo
+
+1 PURPOSE
+
+Ledgerline Distribution receives around 4,000 supplier invoices per month by email and paper. Accounts payable clerks key them into the ERP by hand and chase approvers over email. The Invoice Approval Portal will let suppliers submit invoices electronically, route them to the right approvers, and export approved invoices to the ERP for payment.
+
+2 USERS AND ROLES
+
+Supplier: submits invoices and tracks their payment status.
+AP clerk: reviews submitted invoices, resolves matching exceptions and prepares payment runs.
+Approver: a budget holder who approves or rejects invoices for their cost centre.
+Finance controller: owns approval thresholds and audits the process.
+
+3 FUNCTIONAL REQUIREMENTS
+
+3.1 Invoice submission
+
+Suppliers shall be able to submit invoices through the portal by uploading a PDF and entering the invoice header. Each invoice includes an invoice number, supplier, purchase order number, invoice date, due date, currency, net amount, tax amount, total amount and status (submitted, matched, exception, pending approval, approved, rejected, exported). An invoice contains one or more invoice lines. Each invoice line has a description, quantity, unit price and line amount.
+
+The portal must reject an invoice when the same supplier has already submitted the same invoice number. Suppliers can view the status of their invoices at any time.
+
+3.2 Matching
+
+The system shall perform a three-way match of each invoice against the purchase order and the goods receipt. When the invoice total differs from the purchase order by more than 2 percent, the system shall flag the invoice as an exception. AP clerks must be able to resolve exceptions by editing invoices or rejecting them with a reason.
+
+3.3 Approval routing
+
+The system shall route matched invoices to approvers based on cost centre and amount. Invoices over 10,000 EUR shall require a second approval by the finance controller. Approvers must be able to approve invoices or reject invoices with a mandatory comment. Approvers should be able to delegate approvals to a colleague while they are on leave. As an approver, I want to see all invoices waiting for my approval in one list so that I can clear my queue quickly.
+
+Given an invoice is pending approval, when the approver rejects it without a comment, then the portal shows a validation error and the invoice stays pending approval.
+
+If an invoice is not approved within 5 working days, the system shall escalate the invoice to the approver's manager.
+
+3.4 Export and payment
+
+AP clerks shall be able to export approved invoices to the ERP as a daily payment file. The finance controller can configure approval thresholds per cost centre.
+
+4 NON-FUNCTIONAL REQUIREMENTS
+
+All approvers and AP clerks must sign in with multi-factor authentication. Suppliers shall authenticate with a password and a one-time code sent by email. The portal must keep a complete audit trail of approvals, rejections and threshold changes for 7 years to satisfy SOX retention rules. The approval list should load within 3 seconds for approvers with up to 1,000 pending invoices. The portal must be available 99.9% of the time excluding a weekly maintenance window. The portal should be accessible and meet WCAG 2.1 AA.
+
+5 OUT OF SCOPE
+
+The portal will not process supplier payments directly. Credit notes will be handled in a later phase.
+
+6 OPEN ISSUES
+
+Which ERP export format (CSV or XML) does the treasury team require?
+Approval thresholds for capital expenditure are TBD.

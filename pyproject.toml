@@ -93,6 +93,8 @@ filterwarnings = [
 [tool.coverage.run]
 source = ["requirements_agent"]
 branch = true
+# SQLAlchemy's asyncio layer switches greenlets; without this, lines after awaits are missed.
+concurrency = ["greenlet", "thread"]
 omit = [
   "src/requirements_agent/db/migrations/*",
 ]

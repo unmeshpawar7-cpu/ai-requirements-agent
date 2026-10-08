@@ -133,7 +133,8 @@ async def test_hnsw_index_exists(database: Database) -> None:
     async with database.engine.connect() as conn:
         definition = await conn.scalar(
             text(
-                "SELECT indexdef FROM pg_indexes WHERE indexname = 'ix_document_chunks_embedding_hnsw'"
+                "SELECT indexdef FROM pg_indexes "
+                "WHERE indexname = 'ix_document_chunks_embedding_hnsw'"
             )
         )
     assert definition is not None

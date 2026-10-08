@@ -1,0 +1,11 @@
+{
+  "sections": [
+    "functional_requirements",
+    "non_functional_requirements",
+    "user_stories",
+    "entities",
+    "api_endpoints",
+    "implementation_tasks"
+  ],
+  "focus": "work order scheduling and dispatch"
+}

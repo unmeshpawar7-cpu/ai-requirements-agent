@@ -72,7 +72,8 @@ def export_feature(
         lines += [_tag(story_id), f"Feature: {title}"]
         if story:
             lines.append(f"  As a {_line(story.role)}")
-            lines.append(f"  I want {_line(story.goal)}")
+            goal = _line(story.goal)
+            lines.append(f"  I want {goal if goal.lower().startswith('to ') else 'to ' + goal}")
             if story.benefit:
                 lines.append(f"  So that {_line(story.benefit)}")
         for scenario in sorted(grouped[story_id], key=lambda s: s.id):

@@ -1,0 +1,1079 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "FieldOps API",
+    "version": "0.1.0",
+    "description": "Draft API generated from the requirement documents of project 'FieldOps'. Review before implementing."
+  },
+  "tags": [
+    {
+      "name": "WorkOrder",
+      "description": "Each work order has a reference number, customer, site address, priority (low, normal, high, emergency), status (new, scheduled, in progress, on hold, completed, cancelled), problem description, scheduled date and assigned technician."
+    }
+  ],
+  "paths": {
+    "/work-orders": {
+      "get": {
+        "tags": [
+          "WorkOrder"
+        ],
+        "summary": "List work orders",
+        "operationId": "listWorkOrders",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "minimum": 1,
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 20
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkOrderPage"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          }
+        },
+        "x-evidence": [
+          "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e"
+        ],
+        "x-confidence": 0.6,
+        "x-related-stories": [
+          "US-007",
+          "US-008"
+        ]
+      },
+      "post": {
+        "tags": [
+          "WorkOrder"
+        ],
+        "summary": "Create a work order",
+        "operationId": "createWorkOrder",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkOrderCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkOrder"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "422": {
+            "$ref": "#/components/responses/ValidationError"
+          }
+        },
+        "x-evidence": [
+          "84cc8071-140d-4331-9ee6-826bce68586b",
+          "ee22d4e5-a034-456b-816b-7f23d16796a4"
+        ],
+        "x-confidence": 0.6,
+        "x-related-stories": [
+          "US-002"
+        ]
+      }
+    },
+    "/work-orders/{id}": {
+      "patch": {
+        "tags": [
+          "WorkOrder"
+        ],
+        "summary": "Update a work order",
+        "operationId": "updateWorkOrder",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkOrderUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkOrder"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "422": {
+            "$ref": "#/components/responses/ValidationError"
+          }
+        },
+        "x-evidence": [
+          "ee22d4e5-a034-456b-816b-7f23d16796a4"
+        ],
+        "x-confidence": 0.6,
+        "x-related-stories": [
+          "US-003"
+        ]
+      }
+    },
+    "/work-orders/{id}/assign": {
+      "post": {
+        "tags": [
+          "WorkOrder"
+        ],
+        "summary": "Assign a work order",
+        "operationId": "assignWorkOrder",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkOrder"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        },
+        "x-evidence": [
+          "78a8f02c-bf40-46d1-837b-01529802e68f"
+        ],
+        "x-confidence": 0.65,
+        "x-related-stories": [
+          "US-005",
+          "US-006",
+          "US-008"
+        ]
+      }
+    },
+    "/work-orders/{id}/cancel": {
+      "post": {
+        "tags": [
+          "WorkOrder"
+        ],
+        "summary": "Cancel a work order",
+        "operationId": "cancelWorkOrder",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkOrder"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        },
+        "x-evidence": [
+          "ee22d4e5-a034-456b-816b-7f23d16796a4"
+        ],
+        "x-confidence": 0.65,
+        "x-related-stories": [
+          "US-004"
+        ]
+      }
+    },
+    "/work-orders/{id}/complete": {
+      "post": {
+        "tags": [
+          "WorkOrder"
+        ],
+        "summary": "Complete a work order",
+        "operationId": "completeWorkOrder",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkOrder"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        },
+        "x-evidence": [
+          "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e"
+        ],
+        "x-confidence": 0.65,
+        "x-related-stories": [
+          "US-003",
+          "US-009"
+        ]
+      }
+    },
+    "/work-orders/{id}/reassign": {
+      "post": {
+        "tags": [
+          "WorkOrder"
+        ],
+        "summary": "Reassign a work order",
+        "operationId": "reassignWorkOrder",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkOrder"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        },
+        "x-evidence": [
+          "78a8f02c-bf40-46d1-837b-01529802e68f"
+        ],
+        "x-confidence": 0.65,
+        "x-related-stories": [
+          "US-006"
+        ]
+      }
+    },
+    "/work-orders/{id}/schedule": {
+      "post": {
+        "tags": [
+          "WorkOrder"
+        ],
+        "summary": "Schedule a work order",
+        "operationId": "scheduleWorkOrder",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkOrder"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          }
+        },
+        "x-evidence": [
+          "a0f6e8f7-b064-4749-b408-567034dce884"
+        ],
+        "x-confidence": 0.65,
+        "x-related-stories": [
+          "US-007"
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "required": [
+          "success",
+          "message"
+        ],
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "const": false
+          },
+          "message": {
+            "type": "string"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "field": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "message": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "message"
+              ]
+            }
+          },
+          "traceId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "PartUsed": {
+        "type": "object",
+        "description": "Each part used has a part number, description, quantity and unit cost.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Primary key",
+            "readOnly": true
+          },
+          "part_number": {
+            "type": "string",
+            "description": "part number"
+          },
+          "description": {
+            "type": "string",
+            "description": "description"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int64",
+            "description": "quantity"
+          },
+          "unit_cost": {
+            "type": "string",
+            "format": "decimal",
+            "pattern": "^-?\\d+(\\.\\d+)?$",
+            "description": "unit cost"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Creation timestamp",
+            "readOnly": true
+          }
+        },
+        "required": [
+          "created_at",
+          "description",
+          "id",
+          "part_number",
+          "quantity",
+          "unit_cost"
+        ],
+        "x-relationships": [
+          {
+            "target": "WorkOrder",
+            "kind": "many-to-one"
+          }
+        ]
+      },
+      "PartUsedCreate": {
+        "type": "object",
+        "properties": {
+          "part_number": {
+            "type": "string",
+            "description": "part number"
+          },
+          "description": {
+            "type": "string",
+            "description": "description"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int64",
+            "description": "quantity"
+          },
+          "unit_cost": {
+            "type": "string",
+            "format": "decimal",
+            "pattern": "^-?\\d+(\\.\\d+)?$",
+            "description": "unit cost"
+          }
+        },
+        "required": [
+          "description",
+          "part_number",
+          "quantity",
+          "unit_cost"
+        ]
+      },
+      "PartUsedUpdate": {
+        "type": "object",
+        "properties": {
+          "part_number": {
+            "type": "string",
+            "description": "part number"
+          },
+          "description": {
+            "type": "string",
+            "description": "description"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int64",
+            "description": "quantity"
+          },
+          "unit_cost": {
+            "type": "string",
+            "format": "decimal",
+            "pattern": "^-?\\d+(\\.\\d+)?$",
+            "description": "unit cost"
+          }
+        },
+        "minProperties": 1
+      },
+      "PartUsedPage": {
+        "type": "object",
+        "required": [
+          "items",
+          "page",
+          "pageSize",
+          "totalCount",
+          "totalPages"
+        ],
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PartUsed"
+            }
+          },
+          "page": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "pageSize": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100
+          },
+          "totalCount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "totalPages": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      },
+      "Technician": {
+        "type": "object",
+        "description": "Each technician has a name, email, phone number, skills, home depot and working hours.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Primary key",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "description": "name"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "description": "email"
+          },
+          "phone_number": {
+            "type": "string",
+            "description": "phone number"
+          },
+          "skills": {
+            "type": "string",
+            "description": "skills"
+          },
+          "home_depot": {
+            "type": "string",
+            "description": "home depot"
+          },
+          "working_hours": {
+            "type": "integer",
+            "format": "int64",
+            "description": "working hours"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Creation timestamp",
+            "readOnly": true
+          }
+        },
+        "required": [
+          "created_at",
+          "email",
+          "home_depot",
+          "id",
+          "name",
+          "phone_number",
+          "skills",
+          "working_hours"
+        ]
+      },
+      "TechnicianCreate": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "name"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "description": "email"
+          },
+          "phone_number": {
+            "type": "string",
+            "description": "phone number"
+          },
+          "skills": {
+            "type": "string",
+            "description": "skills"
+          },
+          "home_depot": {
+            "type": "string",
+            "description": "home depot"
+          },
+          "working_hours": {
+            "type": "integer",
+            "format": "int64",
+            "description": "working hours"
+          }
+        },
+        "required": [
+          "email",
+          "home_depot",
+          "name",
+          "phone_number",
+          "skills",
+          "working_hours"
+        ]
+      },
+      "TechnicianUpdate": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "name"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "description": "email"
+          },
+          "phone_number": {
+            "type": "string",
+            "description": "phone number"
+          },
+          "skills": {
+            "type": "string",
+            "description": "skills"
+          },
+          "home_depot": {
+            "type": "string",
+            "description": "home depot"
+          },
+          "working_hours": {
+            "type": "integer",
+            "format": "int64",
+            "description": "working hours"
+          }
+        },
+        "minProperties": 1
+      },
+      "TechnicianPage": {
+        "type": "object",
+        "required": [
+          "items",
+          "page",
+          "pageSize",
+          "totalCount",
+          "totalPages"
+        ],
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Technician"
+            }
+          },
+          "page": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "pageSize": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100
+          },
+          "totalCount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "totalPages": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      },
+      "WorkOrder": {
+        "type": "object",
+        "description": "Each work order has a reference number, customer, site address, priority (low, normal, high, emergency), status (new, scheduled, in progress, on hold, completed, cancelled), problem description, scheduled date and assigned technician.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Primary key",
+            "readOnly": true
+          },
+          "reference_number": {
+            "type": "string",
+            "description": "reference number"
+          },
+          "customer": {
+            "type": "string",
+            "description": "customer"
+          },
+          "site_address": {
+            "type": "string",
+            "description": "site address"
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "low",
+              "normal",
+              "high",
+              "emergency"
+            ],
+            "description": "priority (low, normal, high, emergency)"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "new",
+              "scheduled",
+              "in_progress",
+              "on_hold",
+              "completed",
+              "cancelled"
+            ],
+            "description": "status (new, scheduled, in progress, on hold, completed, cancelled)"
+          },
+          "problem_description": {
+            "type": "string",
+            "description": "problem description"
+          },
+          "scheduled_date": {
+            "type": "string",
+            "format": "date",
+            "description": "scheduled date"
+          },
+          "technician_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Reference to Technician (assigned_technician)"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Creation timestamp",
+            "readOnly": true
+          }
+        },
+        "required": [
+          "created_at",
+          "customer",
+          "id",
+          "priority",
+          "problem_description",
+          "reference_number",
+          "scheduled_date",
+          "site_address",
+          "status",
+          "technician_id"
+        ],
+        "x-relationships": [
+          {
+            "target": "PartUsed",
+            "kind": "one-to-many"
+          },
+          {
+            "target": "Technician",
+            "kind": "many-to-one"
+          }
+        ]
+      },
+      "WorkOrderCreate": {
+        "type": "object",
+        "properties": {
+          "reference_number": {
+            "type": "string",
+            "description": "reference number"
+          },
+          "customer": {
+            "type": "string",
+            "description": "customer"
+          },
+          "site_address": {
+            "type": "string",
+            "description": "site address"
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "low",
+              "normal",
+              "high",
+              "emergency"
+            ],
+            "description": "priority (low, normal, high, emergency)"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "new",
+              "scheduled",
+              "in_progress",
+              "on_hold",
+              "completed",
+              "cancelled"
+            ],
+            "description": "status (new, scheduled, in progress, on hold, completed, cancelled)"
+          },
+          "problem_description": {
+            "type": "string",
+            "description": "problem description"
+          },
+          "scheduled_date": {
+            "type": "string",
+            "format": "date",
+            "description": "scheduled date"
+          },
+          "technician_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Reference to Technician (assigned_technician)"
+          }
+        },
+        "required": [
+          "customer",
+          "priority",
+          "problem_description",
+          "reference_number",
+          "scheduled_date",
+          "site_address",
+          "status",
+          "technician_id"
+        ]
+      },
+      "WorkOrderUpdate": {
+        "type": "object",
+        "properties": {
+          "reference_number": {
+            "type": "string",
+            "description": "reference number"
+          },
+          "customer": {
+            "type": "string",
+            "description": "customer"
+          },
+          "site_address": {
+            "type": "string",
+            "description": "site address"
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "low",
+              "normal",
+              "high",
+              "emergency"
+            ],
+            "description": "priority (low, normal, high, emergency)"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "new",
+              "scheduled",
+              "in_progress",
+              "on_hold",
+              "completed",
+              "cancelled"
+            ],
+            "description": "status (new, scheduled, in progress, on hold, completed, cancelled)"
+          },
+          "problem_description": {
+            "type": "string",
+            "description": "problem description"
+          },
+          "scheduled_date": {
+            "type": "string",
+            "format": "date",
+            "description": "scheduled date"
+          },
+          "technician_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Reference to Technician (assigned_technician)"
+          }
+        },
+        "minProperties": 1
+      },
+      "WorkOrderPage": {
+        "type": "object",
+        "required": [
+          "items",
+          "page",
+          "pageSize",
+          "totalCount",
+          "totalPages"
+        ],
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkOrder"
+            }
+          },
+          "page": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "pageSize": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100
+          },
+          "totalCount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "totalPages": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "responses": {
+      "BadRequest": {
+        "description": "The request is malformed",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "Unauthorized": {
+        "description": "Missing or invalid bearer token",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "NotFound": {
+        "description": "The resource does not exist",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "ValidationError": {
+        "description": "The request body failed validation",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "x-generated": {
+    "generator": "ai-requirements-agent",
+    "analysisId": "426f6a14-4c71-4645-98ad-54eecff839d6",
+    "prompt": "requirements_analysis@v1",
+    "provider": "offline:heuristic-v1",
+    "warnings": []
+  }
+}

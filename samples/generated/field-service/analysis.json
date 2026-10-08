@@ -1,0 +1,2339 @@
+{
+  "success": true,
+  "data": {
+    "id": "426f6a14-4c71-4645-98ad-54eecff839d6",
+    "projectId": "271d8d38-3253-4e36-a806-7eca2a683961",
+    "status": "completed",
+    "sections": [
+      "functional_requirements",
+      "non_functional_requirements",
+      "user_stories",
+      "entities",
+      "api_endpoints",
+      "implementation_tasks"
+    ],
+    "focus": "work order scheduling and dispatch",
+    "promptName": "requirements_analysis",
+    "promptVersion": 1,
+    "provider": "offline",
+    "model": "heuristic-v1",
+    "confidence": 0.695,
+    "itemCounts": {
+      "functional_requirement": 14,
+      "non_functional_requirement": 9,
+      "user_story": 10,
+      "entity": 3,
+      "api_endpoint": 8,
+      "implementation_task": 11
+    },
+    "errorMessage": null,
+    "createdAt": "2026-10-08T08:23:59.918436Z",
+    "completedAt": "2026-10-08T08:23:59.987964Z",
+    "summary": "Offline heuristic analysis (rule-based, no LLM) of 14 evidence block(s) from 1 document(s): found 14 functional and 9 non-functional requirement(s), 10 user stories, 3 entities and 8 endpoint suggestion(s). Retrieval was steered by the focus 'work order scheduling and dispatch'.",
+    "openQuestions": [
+      "Clarify 'easy to' with a measurable criterion: \"The mobile app should be easy to use with gloves on.\" (E13)",
+      "Should emergency work orders bypass the normal approval of overtime? (E14)",
+      "Integration with the ERP for parts stock levels is to be confirmed. (E14)"
+    ],
+    "embeddingModel": "hashing:hashing-v1",
+    "retrievalParams": {
+      "topKPerQuery": 8,
+      "maxEvidence": 24,
+      "minScore": 0.02,
+      "mmrLambda": 0.7,
+      "contextTokens": 6000,
+      "vectorBackend": "memory"
+    },
+    "evidence": [
+      {
+        "label": "E1",
+        "chunkId": "a48cefce-b27f-47c7-8b62-f7c33d09ceff",
+        "documentId": "1cf56989-f18a-4b52-8656-faffd74757db",
+        "documentTitle": "field-service-work-orders.md",
+        "sectionPath": "FieldOps Work Order Management - Software Requirements Specification",
+        "score": 0.293502
+      },
+      {
+        "label": "E2",
+        "chunkId": "84cc8071-140d-4331-9ee6-826bce68586b",
+        "documentId": "1cf56989-f18a-4b52-8656-faffd74757db",
+        "documentTitle": "field-service-work-orders.md",
+        "sectionPath": "FieldOps Work Order Management - Software Requirements Specification > 1 Introduction",
+        "score": 0.146922
+      },
+      {
+        "label": "E3",
+        "chunkId": "73c8bd2e-97e8-4656-a62f-3008e18fa151",
+        "documentId": "1cf56989-f18a-4b52-8656-faffd74757db",
+        "documentTitle": "field-service-work-orders.md",
+        "sectionPath": "FieldOps Work Order Management - Software Requirements Specification > 1 Introduction > 1.1 Scope",
+        "score": 0.32978
+      },
+      {
+        "label": "E4",
+        "chunkId": "a0f6e8f7-b064-4749-b408-567034dce884",
+        "documentId": "1cf56989-f18a-4b52-8656-faffd74757db",
+        "documentTitle": "field-service-work-orders.md",
+        "sectionPath": "FieldOps Work Order Management - Software Requirements Specification > 1 Introduction > 1.2 Actors",
+        "score": 0.227784
+      },
+      {
+        "label": "E5",
+        "chunkId": "ee22d4e5-a034-456b-816b-7f23d16796a4",
+        "documentId": "1cf56989-f18a-4b52-8656-faffd74757db",
+        "documentTitle": "field-service-work-orders.md",
+        "sectionPath": "FieldOps Work Order Management - Software Requirements Specification > 2 Functional Requirements > 2.1 Work order intake",
+        "score": 0.259955
+      },
+      {
+        "label": "E6",
+        "chunkId": "78a8f02c-bf40-46d1-837b-01529802e68f",
+        "documentId": "1cf56989-f18a-4b52-8656-faffd74757db",
+        "documentTitle": "field-service-work-orders.md",
+        "sectionPath": "FieldOps Work Order Management - Software Requirements Specification > 2 Functional Requirements > 2.2 Scheduling and dispatch",
+        "score": 0.4365
+      },
+      {
+        "label": "E7",
+        "chunkId": "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e",
+        "documentId": "1cf56989-f18a-4b52-8656-faffd74757db",
+        "documentTitle": "field-service-work-orders.md",
+        "sectionPath": "FieldOps Work Order Management - Software Requirements Specification > 2 Functional Requirements > 2.3 Technician mobile app",
+        "score": 0.191629
+      },
+      {
+        "label": "E8",
+        "chunkId": "5c94e7d0-10c6-48f3-be28-181bb4621c1e",
+        "documentId": "1cf56989-f18a-4b52-8656-faffd74757db",
+        "documentTitle": "field-service-work-orders.md",
+        "sectionPath": "FieldOps Work Order Management - Software Requirements Specification > 2 Functional Requirements > 2.4 Customer notifications",
+        "score": 0.213862
+      },
+      {
+        "label": "E9",
+        "chunkId": "31f87393-1b59-48c2-8a31-9f7ec261c2b0",
+        "documentId": "1cf56989-f18a-4b52-8656-faffd74757db",
+        "documentTitle": "field-service-work-orders.md",
+        "sectionPath": "FieldOps Work Order Management - Software Requirements Specification > 2 Functional Requirements > 2.5 Reporting",
+        "score": 0.263287
+      },
+      {
+        "label": "E10",
+        "chunkId": "d1769b56-ef36-4cb9-901a-0783913a15a6",
+        "documentId": "1cf56989-f18a-4b52-8656-faffd74757db",
+        "documentTitle": "field-service-work-orders.md",
+        "sectionPath": "FieldOps Work Order Management - Software Requirements Specification > 3 Non-Functional Requirements > 3.1 Performance",
+        "score": 0.276083
+      },
+      {
+        "label": "E11",
+        "chunkId": "065b4a9a-25cd-4c27-879b-d3410b9a13dd",
+        "documentId": "1cf56989-f18a-4b52-8656-faffd74757db",
+        "documentTitle": "field-service-work-orders.md",
+        "sectionPath": "FieldOps Work Order Management - Software Requirements Specification > 3 Non-Functional Requirements > 3.2 Availability and reliability",
+        "score": 0.230878
+      },
+      {
+        "label": "E12",
+        "chunkId": "e9702e8d-7349-4597-a232-397a42286587",
+        "documentId": "1cf56989-f18a-4b52-8656-faffd74757db",
+        "documentTitle": "field-service-work-orders.md",
+        "sectionPath": "FieldOps Work Order Management - Software Requirements Specification > 3 Non-Functional Requirements > 3.3 Security",
+        "score": 0.260077
+      },
+      {
+        "label": "E13",
+        "chunkId": "ef40b74c-ab53-4e2a-bb0d-e69eb3245404",
+        "documentId": "1cf56989-f18a-4b52-8656-faffd74757db",
+        "documentTitle": "field-service-work-orders.md",
+        "sectionPath": "FieldOps Work Order Management - Software Requirements Specification > 3 Non-Functional Requirements > 3.4 Scalability and usability",
+        "score": 0.252255
+      },
+      {
+        "label": "E14",
+        "chunkId": "22d5e2c7-cae1-441c-9df7-312a56c71202",
+        "documentId": "1cf56989-f18a-4b52-8656-faffd74757db",
+        "documentTitle": "field-service-work-orders.md",
+        "sectionPath": "FieldOps Work Order Management - Software Requirements Specification > 4 Open Issues",
+        "score": 0.176297
+      }
+    ],
+    "groundingReport": {
+      "kept": 55,
+      "dropped": [],
+      "flagged": [],
+      "unknownCitations": [],
+      "removedReferences": [],
+      "evidenceBlocks": 14,
+      "contextTokens": 1884,
+      "skippedForBudget": 0
+    },
+    "repairAttempts": 0,
+    "inputTokens": 6023,
+    "outputTokens": 4951,
+    "startedAt": "2026-10-08T08:23:59.929474Z",
+    "items": {
+      "functional_requirement": [
+        {
+          "id": "95a90501-d81c-43d3-a7bd-fff095108377",
+          "itemType": "functional_requirement",
+          "refCode": "FR-001",
+          "title": "Create work orders from customer service requests",
+          "confidence": 0.813,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "ee22d4e5-a034-456b-816b-7f23d16796a4"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.5955,
+            "support": 1.0,
+            "model": 0.85,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.813
+          },
+          "payload": {
+            "evidence": [
+              "ee22d4e5-a034-456b-816b-7f23d16796a4"
+            ],
+            "confidence": 0.85,
+            "id": "FR-001",
+            "title": "Create work orders from customer service requests",
+            "description": "The system shall allow dispatchers to create work orders from customer service requests.",
+            "priority": "must"
+          }
+        },
+        {
+          "id": "772bcc1e-551f-495c-ad04-95c6cdcbb73d",
+          "itemType": "functional_requirement",
+          "refCode": "FR-002",
+          "title": "Validate that the site address belongs to an existing",
+          "confidence": 0.813,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "ee22d4e5-a034-456b-816b-7f23d16796a4"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.5955,
+            "support": 1.0,
+            "model": 0.85,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.813
+          },
+          "payload": {
+            "evidence": [
+              "ee22d4e5-a034-456b-816b-7f23d16796a4"
+            ],
+            "confidence": 0.85,
+            "id": "FR-002",
+            "title": "Validate that the site address belongs to an existing",
+            "description": "The system shall validate that the site address belongs to an existing customer before a work order is saved.",
+            "priority": "must"
+          }
+        },
+        {
+          "id": "40a3d568-2731-4a85-bf29-583229ea0e9a",
+          "itemType": "functional_requirement",
+          "refCode": "FR-003",
+          "title": "Update work orders until they are completed",
+          "confidence": 0.813,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "ee22d4e5-a034-456b-816b-7f23d16796a4"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.5955,
+            "support": 1.0,
+            "model": 0.85,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.813
+          },
+          "payload": {
+            "evidence": [
+              "ee22d4e5-a034-456b-816b-7f23d16796a4"
+            ],
+            "confidence": 0.85,
+            "id": "FR-003",
+            "title": "Update work orders until they are completed",
+            "description": "Dispatchers must be able to update work orders until they are completed.",
+            "priority": "must"
+          }
+        },
+        {
+          "id": "999b9cf5-5203-497e-9db8-4a0c8452be9e",
+          "itemType": "functional_requirement",
+          "refCode": "FR-004",
+          "title": "Cancel work orders",
+          "confidence": 0.738,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "ee22d4e5-a034-456b-816b-7f23d16796a4"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.5955,
+            "support": 1.0,
+            "model": 0.6,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.738
+          },
+          "payload": {
+            "evidence": [
+              "ee22d4e5-a034-456b-816b-7f23d16796a4"
+            ],
+            "confidence": 0.6,
+            "id": "FR-004",
+            "title": "Cancel work orders",
+            "description": "Dispatchers can cancel work orders when the customer withdraws the request, and the system shall record the cancellation reason.",
+            "priority": "could"
+          }
+        },
+        {
+          "id": "a986359f-0032-4340-bbee-20aa9d170e98",
+          "itemType": "functional_requirement",
+          "refCode": "FR-005",
+          "title": "Assign work orders to technicians based on skills and",
+          "confidence": 0.955,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "78a8f02c-bf40-46d1-837b-01529802e68f"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 1.0,
+            "support": 1.0,
+            "model": 0.85,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.955
+          },
+          "payload": {
+            "evidence": [
+              "78a8f02c-bf40-46d1-837b-01529802e68f"
+            ],
+            "confidence": 0.85,
+            "id": "FR-005",
+            "title": "Assign work orders to technicians based on skills and",
+            "description": "The system shall allow dispatchers to assign work orders to technicians based on skills and availability.",
+            "priority": "must"
+          }
+        },
+        {
+          "id": "29edcb86-d36e-4dc5-8575-9ddcceabc15f",
+          "itemType": "functional_requirement",
+          "refCode": "FR-006",
+          "title": "Reassign a work order",
+          "confidence": 0.955,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "78a8f02c-bf40-46d1-837b-01529802e68f"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 1.0,
+            "support": 1.0,
+            "model": 0.85,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.955
+          },
+          "payload": {
+            "evidence": [
+              "78a8f02c-bf40-46d1-837b-01529802e68f"
+            ],
+            "confidence": 0.85,
+            "id": "FR-006",
+            "title": "Reassign a work order",
+            "description": "Dispatchers shall be able to reassign a work order when the assigned technician is unavailable.",
+            "priority": "must"
+          }
+        },
+        {
+          "id": "a4dd51dd-f484-4e1c-82f8-4e7e98c91d23",
+          "itemType": "functional_requirement",
+          "refCode": "FR-007",
+          "title": "Suggest the nearest available technician with the required skill",
+          "confidence": 0.925,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "78a8f02c-bf40-46d1-837b-01529802e68f"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 1.0,
+            "support": 1.0,
+            "model": 0.75,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.925
+          },
+          "payload": {
+            "evidence": [
+              "78a8f02c-bf40-46d1-837b-01529802e68f"
+            ],
+            "confidence": 0.75,
+            "id": "FR-007",
+            "title": "Suggest the nearest available technician with the required skill",
+            "description": "The system should suggest the nearest available technician with the required skill for emergency work orders.",
+            "priority": "should"
+          }
+        },
+        {
+          "id": "5ce994f2-2d10-4c8b-b96d-d4c01d4b9d10",
+          "itemType": "functional_requirement",
+          "refCode": "FR-008",
+          "title": "View the dispatch board showing all scheduled work orders",
+          "confidence": 0.88,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "78a8f02c-bf40-46d1-837b-01529802e68f"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 1.0,
+            "support": 1.0,
+            "model": 0.6,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.88
+          },
+          "payload": {
+            "evidence": [
+              "78a8f02c-bf40-46d1-837b-01529802e68f"
+            ],
+            "confidence": 0.6,
+            "id": "FR-008",
+            "title": "View the dispatch board showing all scheduled work orders",
+            "description": "Operations managers can view the dispatch board showing all scheduled work orders for the day.",
+            "priority": "could"
+          }
+        },
+        {
+          "id": "8da4381c-bee4-48a4-8932-6ec4797bba82",
+          "itemType": "functional_requirement",
+          "refCode": "FR-009",
+          "title": "View their assigned work orders on the mobile app",
+          "confidence": 0.759,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.439,
+            "support": 1.0,
+            "model": 0.85,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.759
+          },
+          "payload": {
+            "evidence": [
+              "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e"
+            ],
+            "confidence": 0.85,
+            "id": "FR-009",
+            "title": "View their assigned work orders on the mobile app",
+            "description": "Technicians must be able to view their assigned work orders on the mobile app.",
+            "priority": "must"
+          }
+        },
+        {
+          "id": "f0ad9994-9dd9-4772-8f36-be9bc99f7274",
+          "itemType": "functional_requirement",
+          "refCode": "FR-010",
+          "title": "Complete work orders on site and capture the customer",
+          "confidence": 0.759,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.439,
+            "support": 1.0,
+            "model": 0.85,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.759
+          },
+          "payload": {
+            "evidence": [
+              "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e"
+            ],
+            "confidence": 0.85,
+            "id": "FR-010",
+            "title": "Complete work orders on site and capture the customer",
+            "description": "Technicians shall be able to complete work orders on site and capture the customer signature.",
+            "priority": "must"
+          }
+        },
+        {
+          "id": "223a7909-6b99-4362-8f39-6f0afeaa7f2c",
+          "itemType": "functional_requirement",
+          "refCode": "FR-011",
+          "title": "Work offline and synchronise changes within 2 minutes of",
+          "confidence": 0.759,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.439,
+            "support": 1.0,
+            "model": 0.85,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.759
+          },
+          "payload": {
+            "evidence": [
+              "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e"
+            ],
+            "confidence": 0.85,
+            "id": "FR-011",
+            "title": "Work offline and synchronise changes within 2 minutes of",
+            "description": "The mobile app must work offline and synchronise changes within 2 minutes of connectivity being restored.",
+            "priority": "must"
+          }
+        },
+        {
+          "id": "38ffdde4-e990-4992-9441-151bec0712a8",
+          "itemType": "functional_requirement",
+          "refCode": "FR-012",
+          "title": "Send the customer an email with the appointment window",
+          "confidence": 0.776,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "5c94e7d0-10c6-48f3-be28-181bb4621c1e"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.4899,
+            "support": 1.0,
+            "model": 0.85,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.776
+          },
+          "payload": {
+            "evidence": [
+              "5c94e7d0-10c6-48f3-be28-181bb4621c1e"
+            ],
+            "confidence": 0.85,
+            "id": "FR-012",
+            "title": "Send the customer an email with the appointment window",
+            "description": "When a work order is scheduled, the system shall send the customer an email with the appointment window.",
+            "priority": "must"
+          }
+        },
+        {
+          "id": "3a6a019e-0abb-4f0e-9b2a-6a2e9ba0cf20",
+          "itemType": "functional_requirement",
+          "refCode": "FR-013",
+          "title": "Export a monthly SLA report",
+          "confidence": 0.816,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "31f87393-1b59-48c2-8a31-9f7ec261c2b0"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.6032,
+            "support": 1.0,
+            "model": 0.85,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.816
+          },
+          "payload": {
+            "evidence": [
+              "31f87393-1b59-48c2-8a31-9f7ec261c2b0"
+            ],
+            "confidence": 0.85,
+            "id": "FR-013",
+            "title": "Export a monthly SLA report",
+            "description": "Operations managers must be able to export a monthly SLA report.",
+            "priority": "must"
+          }
+        },
+        {
+          "id": "3b451cb4-b01e-485b-ae0f-a5a7448dacef",
+          "itemType": "functional_requirement",
+          "refCode": "FR-014",
+          "title": "Track first-time fix rate per technician",
+          "confidence": 0.816,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "31f87393-1b59-48c2-8a31-9f7ec261c2b0"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.6032,
+            "support": 1.0,
+            "model": 0.85,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.816
+          },
+          "payload": {
+            "evidence": [
+              "31f87393-1b59-48c2-8a31-9f7ec261c2b0"
+            ],
+            "confidence": 0.85,
+            "id": "FR-014",
+            "title": "Track first-time fix rate per technician",
+            "description": "The system shall track first-time fix rate per technician.",
+            "priority": "must"
+          }
+        }
+      ],
+      "non_functional_requirement": [
+        {
+          "id": "01e86b0e-552a-4e7e-8c2a-a1d75e50d1d4",
+          "itemType": "non_functional_requirement",
+          "refCode": "NFR-001",
+          "title": "The dispatch board shall load within 2 seconds for up to 500 open work orders.",
+          "confidence": 0.826,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "d1769b56-ef36-4cb9-901a-0783913a15a6"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.6325,
+            "support": 1.0,
+            "model": 0.85,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.826
+          },
+          "payload": {
+            "evidence": [
+              "d1769b56-ef36-4cb9-901a-0783913a15a6"
+            ],
+            "confidence": 0.85,
+            "id": "NFR-001",
+            "category": "performance",
+            "description": "The dispatch board shall load within 2 seconds for up to 500 open work orders.",
+            "metric": "within 2 seconds"
+          }
+        },
+        {
+          "id": "7b9c821f-8b81-4eef-9ef2-63eebcfc66a8",
+          "itemType": "non_functional_requirement",
+          "refCode": "NFR-002",
+          "title": "Search results should be returned in under 500 ms at the 95th percentile.",
+          "confidence": 0.826,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "d1769b56-ef36-4cb9-901a-0783913a15a6"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.6325,
+            "support": 1.0,
+            "model": 0.85,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.826
+          },
+          "payload": {
+            "evidence": [
+              "d1769b56-ef36-4cb9-901a-0783913a15a6"
+            ],
+            "confidence": 0.85,
+            "id": "NFR-002",
+            "category": "performance",
+            "description": "Search results should be returned in under 500 ms at the 95th percentile.",
+            "metric": "under 500 ms"
+          }
+        },
+        {
+          "id": "cee35ad2-db22-4330-ad8a-c4aebd00eafb",
+          "itemType": "non_functional_requirement",
+          "refCode": "NFR-003",
+          "title": "The system must be available 99.5% of the time during business hours (07:00-19:00 local time).",
+          "confidence": 0.79,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "065b4a9a-25cd-4c27-879b-d3410b9a13dd"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.5289,
+            "support": 1.0,
+            "model": 0.85,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.79
+          },
+          "payload": {
+            "evidence": [
+              "065b4a9a-25cd-4c27-879b-d3410b9a13dd"
+            ],
+            "confidence": 0.85,
+            "id": "NFR-003",
+            "category": "availability",
+            "description": "The system must be available 99.5% of the time during business hours (07:00-19:00 local time).",
+            "metric": "99.5%"
+          }
+        },
+        {
+          "id": "73c5494e-2a21-46e2-921f-8c2b3cfdc999",
+          "itemType": "non_functional_requirement",
+          "refCode": "NFR-004",
+          "title": "Nightly backups shall be retained for 35 days and a restore must be tested every quarter.",
+          "confidence": 0.79,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "065b4a9a-25cd-4c27-879b-d3410b9a13dd"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.5289,
+            "support": 1.0,
+            "model": 0.85,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.79
+          },
+          "payload": {
+            "evidence": [
+              "065b4a9a-25cd-4c27-879b-d3410b9a13dd"
+            ],
+            "confidence": 0.85,
+            "id": "NFR-004",
+            "category": "reliability",
+            "description": "Nightly backups shall be retained for 35 days and a restore must be tested every quarter.",
+            "metric": "35 days"
+          }
+        },
+        {
+          "id": "cc88eda1-4d27-4f80-ab49-4687cba798f3",
+          "itemType": "non_functional_requirement",
+          "refCode": "NFR-005",
+          "title": "All users must authenticate via the company's single sign-on provider.",
+          "confidence": 0.754,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "e9702e8d-7349-4597-a232-397a42286587"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.5958,
+            "support": 1.0,
+            "model": 0.65,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.754
+          },
+          "payload": {
+            "evidence": [
+              "e9702e8d-7349-4597-a232-397a42286587"
+            ],
+            "confidence": 0.65,
+            "id": "NFR-005",
+            "category": "security",
+            "description": "All users must authenticate via the company's single sign-on provider.",
+            "metric": null
+          }
+        },
+        {
+          "id": "a00a295a-1912-4aab-bfed-bb67156d3336",
+          "itemType": "non_functional_requirement",
+          "refCode": "NFR-006",
+          "title": "Customer personal data must be encrypted at rest and in transit using TLS 1.2 or higher.",
+          "confidence": 0.754,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "e9702e8d-7349-4597-a232-397a42286587"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.5958,
+            "support": 1.0,
+            "model": 0.65,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.754
+          },
+          "payload": {
+            "evidence": [
+              "e9702e8d-7349-4597-a232-397a42286587"
+            ],
+            "confidence": 0.65,
+            "id": "NFR-006",
+            "category": "security",
+            "description": "Customer personal data must be encrypted at rest and in transit using TLS 1.2 or higher.",
+            "metric": null
+          }
+        },
+        {
+          "id": "5c6a12a5-c372-46d7-9564-b00bb3c03056",
+          "itemType": "non_functional_requirement",
+          "refCode": "NFR-007",
+          "title": "The system shall keep an audit trail of every status change on a work order.",
+          "confidence": 0.754,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "e9702e8d-7349-4597-a232-397a42286587"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.5958,
+            "support": 1.0,
+            "model": 0.65,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.754
+          },
+          "payload": {
+            "evidence": [
+              "e9702e8d-7349-4597-a232-397a42286587"
+            ],
+            "confidence": 0.65,
+            "id": "NFR-007",
+            "category": "security",
+            "description": "The system shall keep an audit trail of every status change on a work order.",
+            "metric": null
+          }
+        },
+        {
+          "id": "5c064daf-1ce3-4d0f-8eab-9b618483b0df",
+          "itemType": "non_functional_requirement",
+          "refCode": "NFR-008",
+          "title": "The platform should support 200 concurrent technicians without degradation.",
+          "confidence": 0.747,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "ef40b74c-ab53-4e2a-bb0d-e69eb3245404"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.5779,
+            "support": 1.0,
+            "model": 0.65,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.747
+          },
+          "payload": {
+            "evidence": [
+              "ef40b74c-ab53-4e2a-bb0d-e69eb3245404"
+            ],
+            "confidence": 0.65,
+            "id": "NFR-008",
+            "category": "scalability",
+            "description": "The platform should support 200 concurrent technicians without degradation.",
+            "metric": null
+          }
+        },
+        {
+          "id": "1795283b-450a-48c5-b74c-338ed9b36784",
+          "itemType": "non_functional_requirement",
+          "refCode": "NFR-009",
+          "title": "The mobile app should be easy to use with gloves on.",
+          "confidence": 0.747,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "ef40b74c-ab53-4e2a-bb0d-e69eb3245404"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.5779,
+            "support": 1.0,
+            "model": 0.65,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.747
+          },
+          "payload": {
+            "evidence": [
+              "ef40b74c-ab53-4e2a-bb0d-e69eb3245404"
+            ],
+            "confidence": 0.65,
+            "id": "NFR-009",
+            "category": "usability",
+            "description": "The mobile app should be easy to use with gloves on.",
+            "metric": null
+          }
+        }
+      ],
+      "user_story": [
+        {
+          "id": "fd34477e-0730-4f75-bc2a-ff93f8f34bef",
+          "itemType": "user_story",
+          "refCode": "US-001",
+          "title": "Receive a notification when the technician is on the way",
+          "confidence": 0.791,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "5c94e7d0-10c6-48f3-be28-181bb4621c1e"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.4899,
+            "support": 1.0,
+            "model": 0.9,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.791
+          },
+          "payload": {
+            "evidence": [
+              "5c94e7d0-10c6-48f3-be28-181bb4621c1e"
+            ],
+            "confidence": 0.9,
+            "id": "US-001",
+            "title": "Receive a notification when the technician is on the way",
+            "role": "customer",
+            "goal": "receive a notification when the technician is on the way",
+            "benefit": "I can make sure someone is at the site",
+            "acceptanceCriteria": [
+              {
+                "given": "a work order is in progress",
+                "when": "the technician marks it as en route",
+                "then": "the customer receives an SMS with the estimated arrival time"
+              }
+            ],
+            "relatedRequirements": []
+          }
+        },
+        {
+          "id": "94ad21f5-cb10-47eb-9843-39bfdd10e034",
+          "itemType": "user_story",
+          "refCode": "US-002",
+          "title": "Create work orders from customer service requests",
+          "confidence": 0.637,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "ee22d4e5-a034-456b-816b-7f23d16796a4"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.5955,
+            "support": 0.6667,
+            "model": 0.65,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.637
+          },
+          "payload": {
+            "evidence": [
+              "ee22d4e5-a034-456b-816b-7f23d16796a4"
+            ],
+            "confidence": 0.65,
+            "id": "US-002",
+            "title": "Create work orders from customer service requests",
+            "role": "dispatcher",
+            "goal": "create work orders from customer service requests",
+            "benefit": null,
+            "acceptanceCriteria": [
+              {
+                "given": "an authenticated dispatcher with access to the feature",
+                "when": "the dispatcher creates work orders from customer service requests",
+                "then": "the system confirms that the work orders were created"
+              }
+            ],
+            "relatedRequirements": [
+              "FR-001"
+            ]
+          }
+        },
+        {
+          "id": "3255486f-ff72-4fbc-a86e-ca23c872b55a",
+          "itemType": "user_story",
+          "refCode": "US-003",
+          "title": "Update work orders until they are completed",
+          "confidence": 0.626,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "ee22d4e5-a034-456b-816b-7f23d16796a4"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.5955,
+            "support": 0.6364,
+            "model": 0.65,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.626
+          },
+          "payload": {
+            "evidence": [
+              "ee22d4e5-a034-456b-816b-7f23d16796a4"
+            ],
+            "confidence": 0.65,
+            "id": "US-003",
+            "title": "Update work orders until they are completed",
+            "role": "dispatcher",
+            "goal": "update work orders until they are completed",
+            "benefit": null,
+            "acceptanceCriteria": [
+              {
+                "given": "an authenticated dispatcher with access to the feature",
+                "when": "the dispatcher updates work orders until they are completed",
+                "then": "the system confirms that the work orders were updated"
+              }
+            ],
+            "relatedRequirements": [
+              "FR-003"
+            ]
+          }
+        },
+        {
+          "id": "1f684ad2-05cc-4d03-8a66-001964bd191c",
+          "itemType": "user_story",
+          "refCode": "US-004",
+          "title": "Cancel work orders",
+          "confidence": 0.715,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "ee22d4e5-a034-456b-816b-7f23d16796a4"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.5955,
+            "support": 0.8889,
+            "model": 0.65,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.715
+          },
+          "payload": {
+            "evidence": [
+              "ee22d4e5-a034-456b-816b-7f23d16796a4"
+            ],
+            "confidence": 0.65,
+            "id": "US-004",
+            "title": "Cancel work orders",
+            "role": "dispatcher",
+            "goal": "cancel work orders when the customer withdraws the request",
+            "benefit": null,
+            "acceptanceCriteria": [
+              {
+                "given": "the customer withdraws the request",
+                "when": "the dispatcher cancels work orders",
+                "then": "the system confirms that the work orders were cancelled"
+              }
+            ],
+            "relatedRequirements": [
+              "FR-004"
+            ]
+          }
+        },
+        {
+          "id": "7fbc1b3e-bf18-43e4-8c08-78823d5eb1e7",
+          "itemType": "user_story",
+          "refCode": "US-005",
+          "title": "Assign work orders to technicians based on skills and",
+          "confidence": 0.787,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "78a8f02c-bf40-46d1-837b-01529802e68f"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 1.0,
+            "support": 0.6923,
+            "model": 0.65,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.787
+          },
+          "payload": {
+            "evidence": [
+              "78a8f02c-bf40-46d1-837b-01529802e68f"
+            ],
+            "confidence": 0.65,
+            "id": "US-005",
+            "title": "Assign work orders to technicians based on skills and",
+            "role": "dispatcher",
+            "goal": "assign work orders to technicians based on skills and availability",
+            "benefit": null,
+            "acceptanceCriteria": [
+              {
+                "given": "an authenticated dispatcher with access to the feature",
+                "when": "the dispatcher assigns work orders to technicians based on skills and availability",
+                "then": "the system confirms that the work orders were assigned"
+              }
+            ],
+            "relatedRequirements": [
+              "FR-005"
+            ]
+          }
+        },
+        {
+          "id": "8ca3e7f8-2e84-489c-a378-f6834e2a640a",
+          "itemType": "user_story",
+          "refCode": "US-006",
+          "title": "Reassign a work order",
+          "confidence": 0.856,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "78a8f02c-bf40-46d1-837b-01529802e68f"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 1.0,
+            "support": 0.8889,
+            "model": 0.65,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.856
+          },
+          "payload": {
+            "evidence": [
+              "78a8f02c-bf40-46d1-837b-01529802e68f"
+            ],
+            "confidence": 0.65,
+            "id": "US-006",
+            "title": "Reassign a work order",
+            "role": "dispatcher",
+            "goal": "reassign a work order when the assigned technician is unavailable",
+            "benefit": null,
+            "acceptanceCriteria": [
+              {
+                "given": "the assigned technician is unavailable",
+                "when": "the dispatcher reassigns a work order",
+                "then": "the system confirms that the work order was reassigned"
+              }
+            ],
+            "relatedRequirements": [
+              "FR-006"
+            ]
+          }
+        },
+        {
+          "id": "a3047780-0330-49d6-a3f3-8db50c371749",
+          "itemType": "user_story",
+          "refCode": "US-007",
+          "title": "View the dispatch board showing all scheduled work orders",
+          "confidence": 0.786,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "78a8f02c-bf40-46d1-837b-01529802e68f"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 1.0,
+            "support": 0.6875,
+            "model": 0.65,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.786
+          },
+          "payload": {
+            "evidence": [
+              "78a8f02c-bf40-46d1-837b-01529802e68f"
+            ],
+            "confidence": 0.65,
+            "id": "US-007",
+            "title": "View the dispatch board showing all scheduled work orders",
+            "role": "operations manager",
+            "goal": "view the dispatch board showing all scheduled work orders for the day",
+            "benefit": null,
+            "acceptanceCriteria": [
+              {
+                "given": "an authenticated operations manager with access to the feature",
+                "when": "the operations manager views the dispatch board showing all scheduled work orders for the day",
+                "then": "the system displays the dispatch board showing all scheduled"
+              }
+            ],
+            "relatedRequirements": [
+              "FR-008"
+            ]
+          }
+        },
+        {
+          "id": "6f82a21e-37e5-49a2-91d9-169d9c6e1a4c",
+          "itemType": "user_story",
+          "refCode": "US-008",
+          "title": "View their assigned work orders on the mobile app",
+          "confidence": 0.537,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.439,
+            "support": 0.5385,
+            "model": 0.65,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.537
+          },
+          "payload": {
+            "evidence": [
+              "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e"
+            ],
+            "confidence": 0.65,
+            "id": "US-008",
+            "title": "View their assigned work orders on the mobile app",
+            "role": "technician",
+            "goal": "view their assigned work orders on the mobile app",
+            "benefit": null,
+            "acceptanceCriteria": [
+              {
+                "given": "an authenticated technician with access to the feature",
+                "when": "the technician views their assigned work orders on the mobile app",
+                "then": "the system displays the assigned work orders"
+              }
+            ],
+            "relatedRequirements": [
+              "FR-009"
+            ]
+          }
+        },
+        {
+          "id": "0f8ab257-68b0-4780-ac26-c178f13469e3",
+          "itemType": "user_story",
+          "refCode": "US-009",
+          "title": "Complete work orders on site and capture the customer",
+          "confidence": 0.564,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.439,
+            "support": 0.6154,
+            "model": 0.65,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.564
+          },
+          "payload": {
+            "evidence": [
+              "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e"
+            ],
+            "confidence": 0.65,
+            "id": "US-009",
+            "title": "Complete work orders on site and capture the customer",
+            "role": "technician",
+            "goal": "complete work orders on site and capture the customer signature",
+            "benefit": null,
+            "acceptanceCriteria": [
+              {
+                "given": "an authenticated technician with access to the feature",
+                "when": "the technician completes work orders on site and capture the customer signature",
+                "then": "the system confirms that the work orders were completed"
+              }
+            ],
+            "relatedRequirements": [
+              "FR-010"
+            ]
+          }
+        },
+        {
+          "id": "5d4e8664-336f-4b96-a960-ba8de64e69cc",
+          "itemType": "user_story",
+          "refCode": "US-010",
+          "title": "Export a monthly SLA report",
+          "confidence": 0.629,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "31f87393-1b59-48c2-8a31-9f7ec261c2b0"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.6032,
+            "support": 0.6364,
+            "model": 0.65,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.629
+          },
+          "payload": {
+            "evidence": [
+              "31f87393-1b59-48c2-8a31-9f7ec261c2b0"
+            ],
+            "confidence": 0.65,
+            "id": "US-010",
+            "title": "Export a monthly SLA report",
+            "role": "operations manager",
+            "goal": "export a monthly SLA report",
+            "benefit": null,
+            "acceptanceCriteria": [
+              {
+                "given": "an authenticated operations manager with access to the feature",
+                "when": "the operations manager exports a monthly SLA report",
+                "then": "the system confirms that the monthly SLA report was exported"
+              }
+            ],
+            "relatedRequirements": [
+              "FR-013"
+            ]
+          }
+        }
+      ],
+      "entity": [
+        {
+          "id": "f70bf7f0-6ce8-43c4-bd25-f581f22cd2cd",
+          "itemType": "entity",
+          "refCode": "WorkOrder",
+          "title": "WorkOrder",
+          "confidence": 0.779,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "ee22d4e5-a034-456b-816b-7f23d16796a4",
+            "84cc8071-140d-4331-9ee6-826bce68586b",
+            "a0f6e8f7-b064-4749-b408-567034dce884",
+            "78a8f02c-bf40-46d1-837b-01529802e68f"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.6135,
+            "support": 0.9259,
+            "model": 0.8,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.779
+          },
+          "payload": {
+            "evidence": [
+              "ee22d4e5-a034-456b-816b-7f23d16796a4",
+              "84cc8071-140d-4331-9ee6-826bce68586b",
+              "a0f6e8f7-b064-4749-b408-567034dce884",
+              "78a8f02c-bf40-46d1-837b-01529802e68f"
+            ],
+            "confidence": 0.8,
+            "name": "WorkOrder",
+            "description": "Each work order has a reference number, customer, site address, priority (low, normal, high, emergency), status (new, scheduled, in progress, on hold, completed, cancelled), problem description, scheduled date and assigned technician.",
+            "fields": [
+              {
+                "name": "id",
+                "type": "uuid",
+                "required": true,
+                "description": "Primary key",
+                "enumValues": []
+              },
+              {
+                "name": "reference_number",
+                "type": "string",
+                "required": true,
+                "description": "reference number",
+                "enumValues": []
+              },
+              {
+                "name": "customer",
+                "type": "string",
+                "required": true,
+                "description": "customer",
+                "enumValues": []
+              },
+              {
+                "name": "site_address",
+                "type": "string",
+                "required": true,
+                "description": "site address",
+                "enumValues": []
+              },
+              {
+                "name": "priority",
+                "type": "enum",
+                "required": true,
+                "description": "priority (low, normal, high, emergency)",
+                "enumValues": [
+                  "low",
+                  "normal",
+                  "high",
+                  "emergency"
+                ]
+              },
+              {
+                "name": "status",
+                "type": "enum",
+                "required": true,
+                "description": "status (new, scheduled, in progress, on hold, completed, cancelled)",
+                "enumValues": [
+                  "new",
+                  "scheduled",
+                  "in_progress",
+                  "on_hold",
+                  "completed",
+                  "cancelled"
+                ]
+              },
+              {
+                "name": "problem_description",
+                "type": "text",
+                "required": true,
+                "description": "problem description",
+                "enumValues": []
+              },
+              {
+                "name": "scheduled_date",
+                "type": "date",
+                "required": true,
+                "description": "scheduled date",
+                "enumValues": []
+              },
+              {
+                "name": "technician_id",
+                "type": "uuid",
+                "required": true,
+                "description": "Reference to Technician (assigned_technician)",
+                "enumValues": []
+              },
+              {
+                "name": "created_at",
+                "type": "datetime",
+                "required": true,
+                "description": "Creation timestamp",
+                "enumValues": []
+              }
+            ],
+            "relationships": [
+              {
+                "target": "PartUsed",
+                "kind": "one-to-many",
+                "description": null
+              },
+              {
+                "target": "Technician",
+                "kind": "many-to-one",
+                "description": null
+              }
+            ]
+          }
+        },
+        {
+          "id": "8cc829ae-90a5-4e34-8ea5-d46f85b1c197",
+          "itemType": "entity",
+          "refCode": "Technician",
+          "title": "Technician",
+          "confidence": 0.79,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "78a8f02c-bf40-46d1-837b-01529802e68f",
+            "84cc8071-140d-4331-9ee6-826bce68586b",
+            "73c8bd2e-97e8-4656-a62f-3008e18fa151",
+            "a0f6e8f7-b064-4749-b408-567034dce884"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.6535,
+            "support": 0.9167,
+            "model": 0.8,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.79
+          },
+          "payload": {
+            "evidence": [
+              "78a8f02c-bf40-46d1-837b-01529802e68f",
+              "84cc8071-140d-4331-9ee6-826bce68586b",
+              "73c8bd2e-97e8-4656-a62f-3008e18fa151",
+              "a0f6e8f7-b064-4749-b408-567034dce884"
+            ],
+            "confidence": 0.8,
+            "name": "Technician",
+            "description": "Each technician has a name, email, phone number, skills, home depot and working hours.",
+            "fields": [
+              {
+                "name": "id",
+                "type": "uuid",
+                "required": true,
+                "description": "Primary key",
+                "enumValues": []
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "required": true,
+                "description": "name",
+                "enumValues": []
+              },
+              {
+                "name": "email",
+                "type": "email",
+                "required": true,
+                "description": "email",
+                "enumValues": []
+              },
+              {
+                "name": "phone_number",
+                "type": "string",
+                "required": true,
+                "description": "phone number",
+                "enumValues": []
+              },
+              {
+                "name": "skills",
+                "type": "string",
+                "required": true,
+                "description": "skills",
+                "enumValues": []
+              },
+              {
+                "name": "home_depot",
+                "type": "string",
+                "required": true,
+                "description": "home depot",
+                "enumValues": []
+              },
+              {
+                "name": "working_hours",
+                "type": "integer",
+                "required": true,
+                "description": "working hours",
+                "enumValues": []
+              },
+              {
+                "name": "created_at",
+                "type": "datetime",
+                "required": true,
+                "description": "Creation timestamp",
+                "enumValues": []
+              }
+            ],
+            "relationships": []
+          }
+        },
+        {
+          "id": "cbdbde75-44cc-49d2-9f7e-59ec97a82745",
+          "itemType": "entity",
+          "refCode": "PartUsed",
+          "title": "PartUsed",
+          "confidence": 0.639,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.439,
+            "support": 0.7,
+            "model": 0.8,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.639
+          },
+          "payload": {
+            "evidence": [
+              "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e"
+            ],
+            "confidence": 0.8,
+            "name": "PartUsed",
+            "description": "Each part used has a part number, description, quantity and unit cost.",
+            "fields": [
+              {
+                "name": "id",
+                "type": "uuid",
+                "required": true,
+                "description": "Primary key",
+                "enumValues": []
+              },
+              {
+                "name": "part_number",
+                "type": "string",
+                "required": true,
+                "description": "part number",
+                "enumValues": []
+              },
+              {
+                "name": "description",
+                "type": "text",
+                "required": true,
+                "description": "description",
+                "enumValues": []
+              },
+              {
+                "name": "quantity",
+                "type": "integer",
+                "required": true,
+                "description": "quantity",
+                "enumValues": []
+              },
+              {
+                "name": "unit_cost",
+                "type": "decimal",
+                "required": true,
+                "description": "unit cost",
+                "enumValues": []
+              },
+              {
+                "name": "created_at",
+                "type": "datetime",
+                "required": true,
+                "description": "Creation timestamp",
+                "enumValues": []
+              }
+            ],
+            "relationships": [
+              {
+                "target": "WorkOrder",
+                "kind": "many-to-one",
+                "description": null
+              }
+            ]
+          }
+        }
+      ],
+      "api_endpoint": [
+        {
+          "id": "208a288f-67c5-4687-9f08-257b2803b2d4",
+          "itemType": "api_endpoint",
+          "refCode": "GET /work-orders",
+          "title": "List work orders",
+          "confidence": 0.567,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.439,
+            "support": 0.6667,
+            "model": 0.6,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.567
+          },
+          "payload": {
+            "evidence": [
+              "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e"
+            ],
+            "confidence": 0.6,
+            "method": "GET",
+            "path": "/work-orders",
+            "summary": "List work orders",
+            "operationId": "listWorkOrders",
+            "requestModel": null,
+            "responseModel": "WorkOrder",
+            "responseIsCollection": true,
+            "successStatus": 200,
+            "queryParams": [
+              {
+                "name": "page",
+                "type": "integer",
+                "required": false,
+                "description": null
+              },
+              {
+                "name": "pageSize",
+                "type": "integer",
+                "required": false,
+                "description": null
+              },
+              {
+                "name": "status",
+                "type": "string",
+                "required": false,
+                "description": null
+              }
+            ],
+            "relatedStories": [
+              "US-007",
+              "US-008"
+            ]
+          }
+        },
+        {
+          "id": "481e7a98-8514-44b5-aa3f-6a3ae761cda8",
+          "itemType": "api_endpoint",
+          "refCode": "POST /work-orders",
+          "title": "Create a work order",
+          "confidence": 0.693,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "84cc8071-140d-4331-9ee6-826bce68586b",
+            "ee22d4e5-a034-456b-816b-7f23d16796a4"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.4661,
+            "support": 1.0,
+            "model": 0.6,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.693
+          },
+          "payload": {
+            "evidence": [
+              "84cc8071-140d-4331-9ee6-826bce68586b",
+              "ee22d4e5-a034-456b-816b-7f23d16796a4"
+            ],
+            "confidence": 0.6,
+            "method": "POST",
+            "path": "/work-orders",
+            "summary": "Create a work order",
+            "operationId": "createWorkOrder",
+            "requestModel": "WorkOrder",
+            "responseModel": "WorkOrder",
+            "responseIsCollection": false,
+            "successStatus": 201,
+            "queryParams": [],
+            "relatedStories": [
+              "US-002"
+            ]
+          }
+        },
+        {
+          "id": "910cc2e4-aa7a-4f1f-8b6b-63accc66450d",
+          "itemType": "api_endpoint",
+          "refCode": "PATCH /work-orders/{id}",
+          "title": "Update a work order",
+          "confidence": 0.651,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "ee22d4e5-a034-456b-816b-7f23d16796a4"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.5955,
+            "support": 0.75,
+            "model": 0.6,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.651
+          },
+          "payload": {
+            "evidence": [
+              "ee22d4e5-a034-456b-816b-7f23d16796a4"
+            ],
+            "confidence": 0.6,
+            "method": "PATCH",
+            "path": "/work-orders/{id}",
+            "summary": "Update a work order",
+            "operationId": "updateWorkOrder",
+            "requestModel": "WorkOrder",
+            "responseModel": "WorkOrder",
+            "responseIsCollection": false,
+            "successStatus": 200,
+            "queryParams": [],
+            "relatedStories": [
+              "US-003"
+            ]
+          }
+        },
+        {
+          "id": "e00d186a-b14a-4cc7-a29a-bdb021b0a2d7",
+          "itemType": "api_endpoint",
+          "refCode": "POST /work-orders/{id}/assign",
+          "title": "Assign a work order",
+          "confidence": 0.807,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "78a8f02c-bf40-46d1-837b-01529802e68f"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 1.0,
+            "support": 0.75,
+            "model": 0.65,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.807
+          },
+          "payload": {
+            "evidence": [
+              "78a8f02c-bf40-46d1-837b-01529802e68f"
+            ],
+            "confidence": 0.65,
+            "method": "POST",
+            "path": "/work-orders/{id}/assign",
+            "summary": "Assign a work order",
+            "operationId": "assignWorkOrder",
+            "requestModel": null,
+            "responseModel": "WorkOrder",
+            "responseIsCollection": false,
+            "successStatus": 200,
+            "queryParams": [],
+            "relatedStories": [
+              "US-005",
+              "US-006",
+              "US-008"
+            ]
+          }
+        },
+        {
+          "id": "453364af-157f-45b7-8de8-57475d54cede",
+          "itemType": "api_endpoint",
+          "refCode": "POST /work-orders/{id}/cancel",
+          "title": "Cancel a work order",
+          "confidence": 0.666,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "ee22d4e5-a034-456b-816b-7f23d16796a4"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.5955,
+            "support": 0.75,
+            "model": 0.65,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.666
+          },
+          "payload": {
+            "evidence": [
+              "ee22d4e5-a034-456b-816b-7f23d16796a4"
+            ],
+            "confidence": 0.65,
+            "method": "POST",
+            "path": "/work-orders/{id}/cancel",
+            "summary": "Cancel a work order",
+            "operationId": "cancelWorkOrder",
+            "requestModel": null,
+            "responseModel": "WorkOrder",
+            "responseIsCollection": false,
+            "successStatus": 200,
+            "queryParams": [],
+            "relatedStories": [
+              "US-004"
+            ]
+          }
+        },
+        {
+          "id": "2be585a5-0d1b-4e90-b346-be08acde48f4",
+          "itemType": "api_endpoint",
+          "refCode": "POST /work-orders/{id}/complete",
+          "title": "Complete a work order",
+          "confidence": 0.611,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.439,
+            "support": 0.75,
+            "model": 0.65,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.611
+          },
+          "payload": {
+            "evidence": [
+              "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e"
+            ],
+            "confidence": 0.65,
+            "method": "POST",
+            "path": "/work-orders/{id}/complete",
+            "summary": "Complete a work order",
+            "operationId": "completeWorkOrder",
+            "requestModel": null,
+            "responseModel": "WorkOrder",
+            "responseIsCollection": false,
+            "successStatus": 200,
+            "queryParams": [],
+            "relatedStories": [
+              "US-003",
+              "US-009"
+            ]
+          }
+        },
+        {
+          "id": "1f5e8735-7baf-44a6-b3e1-3e655d99ee7d",
+          "itemType": "api_endpoint",
+          "refCode": "POST /work-orders/{id}/reassign",
+          "title": "Reassign a work order",
+          "confidence": 0.807,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "78a8f02c-bf40-46d1-837b-01529802e68f"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 1.0,
+            "support": 0.75,
+            "model": 0.65,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.807
+          },
+          "payload": {
+            "evidence": [
+              "78a8f02c-bf40-46d1-837b-01529802e68f"
+            ],
+            "confidence": 0.65,
+            "method": "POST",
+            "path": "/work-orders/{id}/reassign",
+            "summary": "Reassign a work order",
+            "operationId": "reassignWorkOrder",
+            "requestModel": null,
+            "responseModel": "WorkOrder",
+            "responseIsCollection": false,
+            "successStatus": 200,
+            "queryParams": [],
+            "relatedStories": [
+              "US-006"
+            ]
+          }
+        },
+        {
+          "id": "e97b8b29-68f0-4b42-85e0-689874b38710",
+          "itemType": "api_endpoint",
+          "refCode": "POST /work-orders/{id}/schedule",
+          "title": "Schedule a work order",
+          "confidence": 0.64,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "a0f6e8f7-b064-4749-b408-567034dce884"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.5218,
+            "support": 0.75,
+            "model": 0.65,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.64
+          },
+          "payload": {
+            "evidence": [
+              "a0f6e8f7-b064-4749-b408-567034dce884"
+            ],
+            "confidence": 0.65,
+            "method": "POST",
+            "path": "/work-orders/{id}/schedule",
+            "summary": "Schedule a work order",
+            "operationId": "scheduleWorkOrder",
+            "requestModel": null,
+            "responseModel": "WorkOrder",
+            "responseIsCollection": false,
+            "successStatus": 200,
+            "queryParams": [],
+            "relatedStories": [
+              "US-007"
+            ]
+          }
+        }
+      ],
+      "implementation_task": [
+        {
+          "id": "71b642b5-884e-4254-9118-e891e6633f56",
+          "itemType": "implementation_task",
+          "refCode": "T-001",
+          "title": "Model WorkOrder entity and migration",
+          "confidence": 0.518,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "ee22d4e5-a034-456b-816b-7f23d16796a4",
+            "84cc8071-140d-4331-9ee6-826bce68586b",
+            "a0f6e8f7-b064-4749-b408-567034dce884",
+            "78a8f02c-bf40-46d1-837b-01529802e68f"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.6135,
+            "support": 0.1818,
+            "model": 0.8,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.518
+          },
+          "payload": {
+            "evidence": [
+              "ee22d4e5-a034-456b-816b-7f23d16796a4",
+              "84cc8071-140d-4331-9ee6-826bce68586b",
+              "a0f6e8f7-b064-4749-b408-567034dce884",
+              "78a8f02c-bf40-46d1-837b-01529802e68f"
+            ],
+            "confidence": 0.8,
+            "id": "T-001",
+            "title": "Model WorkOrder entity and migration",
+            "description": "Create the WorkOrder table/ORM model with 10 fields and its relationships, plus a database migration.",
+            "estimate": "M",
+            "dependsOn": [],
+            "relatedItems": [
+              "WorkOrder"
+            ]
+          }
+        },
+        {
+          "id": "03d8c2fb-a63d-4fe0-92a6-5edff8454b1f",
+          "itemType": "implementation_task",
+          "refCode": "T-002",
+          "title": "Model Technician entity and migration",
+          "confidence": 0.564,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "78a8f02c-bf40-46d1-837b-01529802e68f",
+            "84cc8071-140d-4331-9ee6-826bce68586b",
+            "73c8bd2e-97e8-4656-a62f-3008e18fa151",
+            "a0f6e8f7-b064-4749-b408-567034dce884"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.6535,
+            "support": 0.2727,
+            "model": 0.8,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.564
+          },
+          "payload": {
+            "evidence": [
+              "78a8f02c-bf40-46d1-837b-01529802e68f",
+              "84cc8071-140d-4331-9ee6-826bce68586b",
+              "73c8bd2e-97e8-4656-a62f-3008e18fa151",
+              "a0f6e8f7-b064-4749-b408-567034dce884"
+            ],
+            "confidence": 0.8,
+            "id": "T-002",
+            "title": "Model Technician entity and migration",
+            "description": "Create the Technician table/ORM model with 8 fields and its relationships, plus a database migration.",
+            "estimate": "M",
+            "dependsOn": [],
+            "relatedItems": [
+              "Technician"
+            ]
+          }
+        },
+        {
+          "id": "368061b3-460e-4a82-8621-ab397c07024e",
+          "itemType": "implementation_task",
+          "refCode": "T-003",
+          "title": "Model PartUsed entity and migration",
+          "confidence": 0.394,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.439,
+            "support": 0.0,
+            "model": 0.8,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.394
+          },
+          "payload": {
+            "evidence": [
+              "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e"
+            ],
+            "confidence": 0.8,
+            "id": "T-003",
+            "title": "Model PartUsed entity and migration",
+            "description": "Create the PartUsed table/ORM model with 6 fields and its relationships, plus a database migration.",
+            "estimate": "S",
+            "dependsOn": [],
+            "relatedItems": [
+              "PartUsed"
+            ]
+          }
+        },
+        {
+          "id": "d6cbc712-ea19-4f6e-a88b-2bcd288263b1",
+          "itemType": "implementation_task",
+          "refCode": "T-004",
+          "title": "Implement WorkOrder API endpoints",
+          "confidence": 0.552,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e",
+            "84cc8071-140d-4331-9ee6-826bce68586b",
+            "ee22d4e5-a034-456b-816b-7f23d16796a4",
+            "78a8f02c-bf40-46d1-837b-01529802e68f"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.5928,
+            "support": 0.4706,
+            "model": 0.6,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.552
+          },
+          "payload": {
+            "evidence": [
+              "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e",
+              "84cc8071-140d-4331-9ee6-826bce68586b",
+              "ee22d4e5-a034-456b-816b-7f23d16796a4",
+              "78a8f02c-bf40-46d1-837b-01529802e68f"
+            ],
+            "confidence": 0.6,
+            "id": "T-004",
+            "title": "Implement WorkOrder API endpoints",
+            "description": "Implement, validate and test: GET /work-orders, POST /work-orders, PATCH /work-orders/{id}, POST /work-orders/{id}/assign, POST /work-orders/{id}/cancel, POST /work-orders/{id}/complete, POST /work-orders/{id}/reassign, POST /work-orders/{id}/schedule",
+            "estimate": "L",
+            "dependsOn": [
+              "T-001"
+            ],
+            "relatedItems": [
+              "GET /work-orders",
+              "POST /work-orders",
+              "PATCH /work-orders/{id}",
+              "POST /work-orders/{id}/assign",
+              "POST /work-orders/{id}/cancel",
+              "POST /work-orders/{id}/complete",
+              "POST /work-orders/{id}/reassign",
+              "POST /work-orders/{id}/schedule"
+            ]
+          }
+        },
+        {
+          "id": "fecad058-1a3b-4536-ba50-ba33463fb439",
+          "itemType": "implementation_task",
+          "refCode": "T-005",
+          "title": "Implement availability controls",
+          "confidence": 0.4,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "065b4a9a-25cd-4c27-879b-d3410b9a13dd"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.5289,
+            "support": 0.1,
+            "model": 0.6,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.4
+          },
+          "payload": {
+            "evidence": [
+              "065b4a9a-25cd-4c27-879b-d3410b9a13dd"
+            ],
+            "confidence": 0.6,
+            "id": "T-005",
+            "title": "Implement availability controls",
+            "description": "Address NFR-003 (targets: 99.5%); add automated checks that verify them.",
+            "estimate": "M",
+            "dependsOn": [],
+            "relatedItems": [
+              "NFR-003"
+            ]
+          }
+        },
+        {
+          "id": "f539bf8d-f4ea-402a-a95f-04a7377e18d3",
+          "itemType": "implementation_task",
+          "refCode": "T-006",
+          "title": "Implement performance controls",
+          "confidence": 0.526,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "d1769b56-ef36-4cb9-901a-0783913a15a6"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.6325,
+            "support": 0.3571,
+            "model": 0.6,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.526
+          },
+          "payload": {
+            "evidence": [
+              "d1769b56-ef36-4cb9-901a-0783913a15a6"
+            ],
+            "confidence": 0.6,
+            "id": "T-006",
+            "title": "Implement performance controls",
+            "description": "Address NFR-001, NFR-002 (targets: within 2 seconds, under 500 ms); add automated checks that verify them.",
+            "estimate": "M",
+            "dependsOn": [],
+            "relatedItems": [
+              "NFR-001",
+              "NFR-002"
+            ]
+          }
+        },
+        {
+          "id": "fb26c361-573b-49f4-9f9f-529790e71701",
+          "itemType": "implementation_task",
+          "refCode": "T-007",
+          "title": "Implement reliability controls",
+          "confidence": 0.429,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "065b4a9a-25cd-4c27-879b-d3410b9a13dd"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.5289,
+            "support": 0.1818,
+            "model": 0.6,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.429
+          },
+          "payload": {
+            "evidence": [
+              "065b4a9a-25cd-4c27-879b-d3410b9a13dd"
+            ],
+            "confidence": 0.6,
+            "id": "T-007",
+            "title": "Implement reliability controls",
+            "description": "Address NFR-004 (targets: 35 days); add automated checks that verify them.",
+            "estimate": "M",
+            "dependsOn": [],
+            "relatedItems": [
+              "NFR-004"
+            ]
+          }
+        },
+        {
+          "id": "d04cc190-41ae-40a4-b685-afdd37326225",
+          "itemType": "implementation_task",
+          "refCode": "T-008",
+          "title": "Implement scalability controls",
+          "confidence": 0.421,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "ef40b74c-ab53-4e2a-bb0d-e69eb3245404"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.5779,
+            "support": 0.1111,
+            "model": 0.6,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.421
+          },
+          "payload": {
+            "evidence": [
+              "ef40b74c-ab53-4e2a-bb0d-e69eb3245404"
+            ],
+            "confidence": 0.6,
+            "id": "T-008",
+            "title": "Implement scalability controls",
+            "description": "Address NFR-008; add automated checks that verify them.",
+            "estimate": "M",
+            "dependsOn": [],
+            "relatedItems": [
+              "NFR-008"
+            ]
+          }
+        },
+        {
+          "id": "2a5cf0e7-037c-4264-9315-229a47038fcc",
+          "itemType": "implementation_task",
+          "refCode": "T-009",
+          "title": "Implement security controls",
+          "confidence": 0.427,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "e9702e8d-7349-4597-a232-397a42286587"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.5958,
+            "support": 0.1111,
+            "model": 0.6,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.427
+          },
+          "payload": {
+            "evidence": [
+              "e9702e8d-7349-4597-a232-397a42286587"
+            ],
+            "confidence": 0.6,
+            "id": "T-009",
+            "title": "Implement security controls",
+            "description": "Address NFR-005, NFR-006, NFR-007; add automated checks that verify them.",
+            "estimate": "M",
+            "dependsOn": [],
+            "relatedItems": [
+              "NFR-005",
+              "NFR-006",
+              "NFR-007"
+            ]
+          }
+        },
+        {
+          "id": "0a126f24-059e-4069-854e-9d4460ade5f0",
+          "itemType": "implementation_task",
+          "refCode": "T-010",
+          "title": "Implement usability controls",
+          "confidence": 0.421,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "ef40b74c-ab53-4e2a-bb0d-e69eb3245404"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.5779,
+            "support": 0.1111,
+            "model": 0.6,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.421
+          },
+          "payload": {
+            "evidence": [
+              "ef40b74c-ab53-4e2a-bb0d-e69eb3245404"
+            ],
+            "confidence": 0.6,
+            "id": "T-010",
+            "title": "Implement usability controls",
+            "description": "Address NFR-009; add automated checks that verify them.",
+            "estimate": "M",
+            "dependsOn": [],
+            "relatedItems": [
+              "NFR-009"
+            ]
+          }
+        },
+        {
+          "id": "eaab48d8-fded-4598-9e96-77a247e61751",
+          "itemType": "implementation_task",
+          "refCode": "T-011",
+          "title": "Automate acceptance tests for user stories",
+          "confidence": 0.425,
+          "grounded": true,
+          "groundingIssues": [],
+          "evidenceChunkIds": [
+            "5c94e7d0-10c6-48f3-be28-181bb4621c1e",
+            "ee22d4e5-a034-456b-816b-7f23d16796a4",
+            "78a8f02c-bf40-46d1-837b-01529802e68f",
+            "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e"
+          ],
+          "confidenceBreakdown": {
+            "retrieval": 0.6311,
+            "support": 0.1111,
+            "model": 0.55,
+            "repairFactor": 1.0,
+            "groundingFactor": 1.0,
+            "final": 0.425
+          },
+          "payload": {
+            "evidence": [
+              "5c94e7d0-10c6-48f3-be28-181bb4621c1e",
+              "ee22d4e5-a034-456b-816b-7f23d16796a4",
+              "78a8f02c-bf40-46d1-837b-01529802e68f",
+              "bcfb8a83-a19d-4cbb-bb61-41d98d95c45e"
+            ],
+            "confidence": 0.55,
+            "id": "T-011",
+            "title": "Automate acceptance tests for user stories",
+            "description": "Turn the Given/When/Then criteria of US-001, US-002, US-003, US-004, US-005, US-006, US-007, US-008, US-009, US-010 into automated acceptance tests.",
+            "estimate": "M",
+            "dependsOn": [],
+            "relatedItems": [
+              "US-001",
+              "US-002",
+              "US-003",
+              "US-004",
+              "US-005",
+              "US-006",
+              "US-007",
+              "US-008",
+              "US-009",
+              "US-010"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "message": null
+}

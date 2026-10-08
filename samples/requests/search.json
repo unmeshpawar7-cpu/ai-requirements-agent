@@ -1,0 +1,5 @@
+{
+  "query": "dispatch board load time",
+  "topK": 2,
+  "useMmr": true
+}

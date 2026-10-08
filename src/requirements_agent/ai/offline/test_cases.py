@@ -42,7 +42,8 @@ def derive_test_cases(stories: list[dict[str, Any]]) -> TestCaseGenerationOutput
                     "confidence": 0.8,
                 }
             )
-            if index == 0:
+            # Authorisation case only when the story's role performs the action itself.
+            if index == 0 and role.lower() in criterion.when.lower():
                 when = re.sub(
                     rf"\bthe {re.escape(role)}\b",
                     "the user",

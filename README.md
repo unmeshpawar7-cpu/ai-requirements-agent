@@ -387,8 +387,8 @@ What is covered:
 - **PostgreSQL** (`@pytest.mark.postgres`, skipped without `TEST_DATABASE_URL`): pgvector
   ranking/scoping/thresholds, HNSW index, Alembic upgrade/downgrade, full flow on pgvector.
 
-Measured locally (Python 3.13): **94 passed, 4 skipped, 94% line+branch coverage** without
-Postgres; **98 passed, 95% coverage** with `TEST_DATABASE_URL` pointing at PostgreSQL 16 +
+Measured locally (Python 3.13): **95 passed, 4 skipped, 94% line+branch coverage** without
+Postgres; **99 passed, 95% coverage** with `TEST_DATABASE_URL` pointing at PostgreSQL 16 +
 pgvector 0.6. CI runs the full suite against a `pgvector/pgvector:pg16` service with
 `--cov-fail-under=80`. `ruff check` and `ruff format --check` are clean.
 

@@ -177,3 +177,13 @@ async def test_not_found_and_request_id(client: httpx.AsyncClient, viewer_header
     assert unknown_route.json()["success"] is False
     bad_uuid = await client.get("/api/projects/not-a-uuid", headers=viewer_headers)
     assert bad_uuid.status_code == 422
+
+
+async def test_service_openapi_document_is_valid(client: httpx.AsyncClient) -> None:
+    from openapi_spec_validator import validate
+
+    response = await client.get("/openapi.json")
+    document = response.json()
+    validate(document)
+    assert "/api/projects/{project_id}/analyses" in document["paths"]
+    assert "bearer" in str(document["components"]["securitySchemes"]).lower()

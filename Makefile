@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := help
-PYTHON ?= python3.12
+PYTHON ?= python3
 VENV := .venv
 BIN := $(VENV)/bin
 

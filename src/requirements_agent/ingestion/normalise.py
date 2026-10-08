@@ -11,11 +11,11 @@ import unicodedata
 
 _CONTROL_CHARS = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]")
 _HYPHENATED_BREAK = re.compile(r"(\w)-\n(\w)")
-_INLINE_WS = re.compile(r"[ \t  -​  　]+")
+_INLINE_WS = re.compile(r"[ \t\u00a0\u2000-\u200b\u202f\u205f\u3000]+")
 _MANY_BLANK_LINES = re.compile(r"\n{3,}")
-_BULLET = re.compile(r"^\s*[•‣▪●◦⁃∙·*–—]\s+")
+_BULLET = re.compile(r"^\s*[\u2022\u2023\u25aa\u25cf\u25e6\u2043\u2219\u00b7*\u2013\u2014]\s+")
 _SMART_QUOTES = str.maketrans(
-    {"‘": "'", "’": "'", "“": '"', "”": '"', "′": "'", "″": '"'}
+    {"\u2018": "'", "\u2019": "'", "\u201c": '"', "\u201d": '"', "\u2032": "'", "\u2033": '"'}
 )
 
 

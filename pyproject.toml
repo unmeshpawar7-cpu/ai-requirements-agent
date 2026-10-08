@@ -66,6 +66,8 @@ ignore = [
   "B008",   # FastAPI dependency injection uses calls in defaults
   "S101",   # assert is fine in tests (and used for invariants)
   "RUF012", # mutable class attributes on SQLAlchemy / pydantic models are intentional
+  "UP046",  # pydantic generic models keep Generic[T] for clarity
+  "UP047",
 ]
 
 [tool.ruff.lint.per-file-ignores]

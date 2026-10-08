@@ -235,6 +235,8 @@ class RequirementItem(Base):
     confidence: Mapped[float] = mapped_column(Float, nullable=False)
     evidence_chunk_ids: Mapped[list[str]] = mapped_column(JSONType, nullable=False)
     grounded: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
+    grounding_issues: Mapped[list[str]] = mapped_column(JSONType, nullable=False, default=list)
+    confidence_breakdown: Mapped[dict[str, float] | None] = mapped_column(JSONType)
     ordinal: Mapped[int] = mapped_column(Integer, nullable=False)
 
     analysis: Mapped[Analysis] = relationship(back_populates="items", lazy="raise")

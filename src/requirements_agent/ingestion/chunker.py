@@ -33,8 +33,25 @@ _NUMBERED_HEADING = re.compile(r"^(\d+(?:\.\d+){0,4})\.?\s+([A-Za-z][^\n]*)$")
 _LIST_ITEM = re.compile(r"^(?:[-+]\s+|\d+[.)]\s+|[a-z][.)]\s+)")
 _SENTENCE_END = re.compile(r"[.!?]+[\"')\]]*(?=\s+[A-Z0-9\"'(\[])")
 _ABBREVIATIONS = {
-    "e.g", "i.e", "etc", "vs", "mr", "mrs", "ms", "dr", "approx", "incl", "no", "fig", "min",
-    "max", "est", "dept", "ref", "sec", "v",
+    "e.g",
+    "i.e",
+    "etc",
+    "vs",
+    "mr",
+    "mrs",
+    "ms",
+    "dr",
+    "approx",
+    "incl",
+    "no",
+    "fig",
+    "min",
+    "max",
+    "est",
+    "dept",
+    "ref",
+    "sec",
+    "v",
 }
 _MAX_HEADING_CHARS = 200
 
@@ -97,7 +114,7 @@ class Chunker:
 
         for block_start, block_end in _blocks(text):
             block = text[block_start:block_end]
-            heading = _heading(block)
+            heading = detect_heading(block)
             if heading is not None:
                 level, title = heading
                 while heading_stack and heading_stack[-1][0] >= level:
@@ -214,7 +231,8 @@ def _blocks(text: str) -> list[tuple[int, int]]:
     return blocks
 
 
-def _heading(block: str) -> tuple[int, str] | None:
+def detect_heading(block: str) -> tuple[int, str] | None:
+    """Return (level, title) if `block` is a heading line, else None."""
     if "\n" in block or len(block) > _MAX_HEADING_CHARS or block.startswith(("- ", "+ ")):
         return None
     md = _MD_HEADING.match(block)

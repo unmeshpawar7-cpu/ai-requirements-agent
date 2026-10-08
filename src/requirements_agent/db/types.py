@@ -1,9 +1,9 @@
 """Portable column types.
 
-* `UTCDateTime` – always returns timezone-aware UTC datetimes (SQLite drops tzinfo).
-* `EmbeddingVector` – `vector(dim)` (pgvector) on PostgreSQL, JSON array elsewhere, so the same
+* `UTCDateTime` - always returns timezone-aware UTC datetimes (SQLite drops tzinfo).
+* `EmbeddingVector` - `vector(dim)` (pgvector) on PostgreSQL, JSON array elsewhere, so the same
   ORM model works for production (Postgres) and tests (SQLite).
-* `JSONType` – JSONB on PostgreSQL, JSON elsewhere.
+* `JSONType` - JSONB on PostgreSQL, JSON elsewhere.
 """
 
 from __future__ import annotations

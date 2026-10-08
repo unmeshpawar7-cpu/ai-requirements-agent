@@ -1,0 +1,43 @@
+# Local stack: API + PostgreSQL 16 with pgvector.
+#   cp .env.example .env   (then adjust secrets)
+#   docker compose up --build
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-reqagent}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-reqagent}
+      POSTGRES_DB: ${POSTGRES_DB:-reqagent}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        EXTRAS: ${EXTRAS:-}
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-reqagent}:${POSTGRES_PASSWORD:-reqagent}@db:5432/${POSTGRES_DB:-reqagent}
+      DATABASE_AUTO_CREATE: "false"
+      RUN_MIGRATIONS: "true"
+      VECTOR_BACKEND: pgvector
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  pgdata:

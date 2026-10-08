@@ -17,9 +17,11 @@ from typing import Any
 request_id_var: ContextVar[str | None] = ContextVar("request_id", default=None)
 
 # Attributes present on every LogRecord; anything else passed via `extra=` is emitted as a field.
-_RESERVED = set(
-    logging.LogRecord("x", logging.INFO, "x", 0, "x", None, None).__dict__.keys()
-) | {"message", "asctime", "taskName"}
+_RESERVED = set(logging.LogRecord("x", logging.INFO, "x", 0, "x", None, None).__dict__.keys()) | {
+    "message",
+    "asctime",
+    "taskName",
+}
 
 
 def get_request_id() -> str | None:

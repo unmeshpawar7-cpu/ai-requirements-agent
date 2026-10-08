@@ -108,7 +108,9 @@ def error_response(
 
 
 def _loc_to_field(loc: Sequence[Any]) -> str | None:
-    parts = [str(p) for p in loc if p not in ("body", "query", "path", "header", "form")]
+    parts = [str(p) for p in loc]
+    if parts and parts[0] in ("body", "query", "path", "header", "cookie", "form"):
+        parts = parts[1:]
     return ".".join(parts) or None
 
 

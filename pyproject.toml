@@ -68,6 +68,7 @@ ignore = [
   "RUF012", # mutable class attributes on SQLAlchemy / pydantic models are intentional
   "UP046",  # pydantic generic models keep Generic[T] for clarity
   "UP047",
+  "ASYNC109", # explicit timeout parameters on shutdown helpers are intentional
 ]
 
 [tool.ruff.lint.per-file-ignores]

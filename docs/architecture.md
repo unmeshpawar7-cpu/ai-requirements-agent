@@ -146,7 +146,7 @@ sequenceDiagram
             S->>S: append answer + validation errors, ask for a fix
         end
     end
-    S-->>Jobs: AnalysisOutput (or StructuredOutputError -> failed)
+    S-->>Jobs: AnalysisOutput, or StructuredOutputError (analysis failed)
     Jobs->>G: resolve citations, drop/flag, check cross references
     Jobs->>Q: score every kept item
     Jobs->>DB: INSERT requirement_items, analysis=completed

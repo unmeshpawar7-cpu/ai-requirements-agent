@@ -10,7 +10,13 @@ from __future__ import annotations
 
 from typing import Any
 
-from tenacity import AsyncRetrying, retry_if_exception, stop_after_attempt, wait_exponential_jitter
+from tenacity import (
+    AsyncRetrying,
+    retry_if_exception,
+    stop_after_attempt,
+    wait_exponential,
+    wait_random,
+)
 
 from requirements_agent.ai.providers.base import (
     LLMRequest,
@@ -59,7 +65,7 @@ class OpenAIProvider:
         ]
         async for attempt in AsyncRetrying(
             stop=stop_after_attempt(self._max_attempts),
-            wait=wait_exponential_jitter(initial=1, max=20),
+            wait=wait_exponential(multiplier=1, max=20) + wait_random(0, 1),
             retry=retry_if_exception(is_transient_error),
             reraise=True,
         ):

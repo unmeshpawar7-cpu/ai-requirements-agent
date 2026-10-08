@@ -150,7 +150,11 @@ class QueryParam(AIModel):
 
 class ApiEndpoint(Cited):
     method: HttpMethod
-    path: str = Field(pattern=r"^/[a-z0-9\-/{}_]*$", max_length=200, examples=["/work-orders/{id}"])
+    path: str = Field(
+        pattern=r"^/[a-z0-9\-/_]*(?:\{[A-Za-z_][A-Za-z0-9_]*\}[a-z0-9\-/_]*)*$",
+        max_length=200,
+        examples=["/work-orders/{id}"],
+    )
     summary: str = Field(min_length=3, max_length=300)
     operation_id: str | None = Field(default=None, pattern=r"^[a-z][A-Za-z0-9]{0,99}$")
     request_model: str | None = Field(

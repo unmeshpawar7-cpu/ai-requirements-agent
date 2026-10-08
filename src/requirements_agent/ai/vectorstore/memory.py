@@ -34,20 +34,24 @@ class InMemoryVectorStore:
         if not records:
             return
         async with self._lock:
+            base = len(self._ids)
             new_rows: list[np.ndarray] = []
             for record in records:
                 vector = self._normalise(record.embedding)
-                existing = self._position.get(record.chunk_id)
-                if existing is not None:
-                    self._matrix[existing] = vector
-                    self._documents[existing] = record.document_id
-                    self._projects[existing] = record.project_id
+                position = self._position.get(record.chunk_id)
+                if position is None:
+                    self._position[record.chunk_id] = len(self._ids)
+                    self._ids.append(record.chunk_id)
+                    self._documents.append(record.document_id)
+                    self._projects.append(record.project_id)
+                    new_rows.append(vector)
                     continue
-                self._position[record.chunk_id] = len(self._ids) + len(new_rows)
-                new_rows.append(vector)
-                self._ids.append(record.chunk_id)
-                self._documents.append(record.document_id)
-                self._projects.append(record.project_id)
+                self._documents[position] = record.document_id
+                self._projects[position] = record.project_id
+                if position < base:
+                    self._matrix[position] = vector
+                else:  # duplicate id within the same batch
+                    new_rows[position - base] = vector
             if new_rows:
                 self._matrix = np.vstack([self._matrix, np.stack(new_rows)])
 

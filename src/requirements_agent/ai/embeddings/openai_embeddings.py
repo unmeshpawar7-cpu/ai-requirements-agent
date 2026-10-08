@@ -10,7 +10,8 @@ from tenacity import (
     AsyncRetrying,
     retry_if_exception,
     stop_after_attempt,
-    wait_exponential_jitter,
+    wait_exponential,
+    wait_random,
 )
 
 from requirements_agent.ai.providers.base import ProviderUnavailableError, is_transient_error
@@ -60,7 +61,7 @@ class OpenAIEmbeddingProvider:
     async def _embed_batch(self, batch: list[str]) -> list[list[float]]:
         async for attempt in AsyncRetrying(
             stop=stop_after_attempt(self._max_attempts),
-            wait=wait_exponential_jitter(initial=0.5, max=8),
+            wait=wait_exponential(multiplier=0.5, max=8) + wait_random(0, 1),
             retry=retry_if_exception(is_transient_error),
             reraise=True,
         ):

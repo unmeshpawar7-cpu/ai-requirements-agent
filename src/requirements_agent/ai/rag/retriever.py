@@ -103,7 +103,8 @@ class Retriever:
         if not queries or max_results <= 0:
             return []
         vectors = await self._embedder.embed(queries)
-        fetch_k = top_k_per_query * (self._fetch_multiplier if use_mmr else 1)
+        # Over-fetch even without MMR: hydration may drop hits (documents not ready/deleted).
+        fetch_k = top_k_per_query * self._fetch_multiplier
 
         best: dict[uuid.UUID, VectorHit] = {}
         for vector in vectors:

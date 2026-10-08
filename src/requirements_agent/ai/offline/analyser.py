@@ -969,10 +969,11 @@ def _split_fields(raw: str) -> list[str]:
     result: list[str] = []
     for part in parts:
         part = re.sub(r"^\s*(?:and|or)\s+", "", part.strip())
-        if " and " in part and "(" not in part:
-            result.extend(p.strip() for p in part.split(" and "))
-        else:
-            result.append(part)
+        head, paren, tail = part.partition("(")
+        pieces = [p.strip() for p in re.split(r"\s+and\s+", head) if p.strip()]
+        if paren and pieces:
+            pieces[-1] = f"{pieces[-1]} ({tail}"
+        result.extend(pieces)
     return [p for p in result if p]
 
 
